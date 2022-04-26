@@ -1,0 +1,107 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+
+}
+:root{
+--blue:#8486a9;
+--red:#fb6087;
+--darkblue:#343650;
+--verydarkblue:#1e1f29;
+--almostblack:#191a24;
+}
+
+body{
+background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='1440' height='197'%3e%3cdefs%3e%3cpath id='a' d='M0 0h1440v197H0z'/%3e%3c/defs%3e%3cg fill='none' fill-rule='evenodd'%3e%3cmask id='b' fill='%23fff'%3e%3cuse xlink:href='%23a'/%3e%3c/mask%3e%3cg mask='url(%23b)'%3e%3cpath fill='%23211A29' d='M1440 50.205L1088.504 0 949.669 50.205 878 25.102 556 0 398.525 50.205l-95.807-25.103-51.328 16.761L45.704 0 0 17.701V160h1440z'/%3e%3cpath fill='%231A1823' d='M1394.296 1l94.649 69.336 50.047-49.449zM1137.282 42.576l51.328 27.76 80.6-5.426zM884 1l157.475 83.151 80.929-26.062zM351.496 1l138.835 83.151 49.321-28.526z'/%3e%3cpath fill='%232F2439' d='M0 84.151L351.496 1l138.835 83.151L562 42.576 884 1l157.475 83.151 95.807-41.575 51.328 27.76L1394.296 1 1440 30.317V266H0z'/%3e%3c/g%3e%3c/g%3e%3c/svg%3e");
+    background-position:bottom;
+    background-size:100% 20%;
+    background-color:var(--almostblack);
+    min-height: 100vh;
+font-family: 'Red Hat Text', sans-serif;
+    font-weight: 700;
+
+    display:flex;
+    flex-direction: column;
+    justify-content:space-evenly;
+    align-items: center;
+}
+body>*{
+    border:2px red solid;
+}
+
+
+.timer{
+display:flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-evenly;
+
+
+}
+.number{
+font-size: 72px;;
+    height:147px;
+    width:144px;
+    border:3px green solid;
+    color:var(--red);
+position:relative;
+overflow: hidden;
+}
+
+.backtop, .backbot,.card{
+    position:absolute;
+  text-align: center;;
+    width:100%;
+    height:50%;
+    
+}
+
+.backtop{
+    background-color: aqua;
+    overflow:hidden;
+    line-height:141px;
+}
+.backbot{
+    background-color: bisque;
+    bottom:0;
+    line-height: 0px;
+    overflow:hidden;
+}
+.card{
+background-color: coral;
+transform-style: preserve-3d;
+transform-origin: bottom center;
+animation:cardani 2s infinite;
+
+}
+
+
+@keyframes cardani {
+    0%, 30%{transform:rotatex(0deg);}
+    70%, 100%{transform:rotatex(180deg);}
+}
+
+.face{
+    position:absolute;
+    backface-visibility:hidden;
+    width:100%;
+    height:100%;
+}
+.front{
+    background-color: khaki;
+    line-height:140px;
+    overflow: hidden;
+
+}
+.back{
+    background-color:brown;;
+    transform :rotateY(180deg) rotatez(180deg);
+    line-height:0px;
+    overflow:hidden;
+
+}

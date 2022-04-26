@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Launch countdown timer</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution {
+      position: absolute;
+      bottom: 4px;
+      margin: auto;
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+  <div class="heading">We're launching soon</div>
+
+  <div class="timer">
+
+    <div class="number days">
+      <div class="backtop">874</div>
+      <div class="backbot">o74</div>
+      <div class="card">
+        <div class="face front">o74</div>
+        <div class="face back">874</div>
+      </div>
+    </div>
+
+
+    <div class="number hours">
+      <div class="backtop">874</div>
+      <div class="backbot">o74</div>
+      <div class="card">
+        <div class="face front">o74</div>
+        <div class="face back">874</div>
+      </div>
+    </div>
+
+    <div class="number mins">
+      <div class="backtop">874</div>
+      <div class="backbot">o74</div>
+      <div class="card">
+        <div class="face front">o74</div>
+        <div class="face back">874</div>
+      </div>
+    </div>
+
+    <div class="number secs">
+      <div class="backtop">874</div>
+      <div class="backbot">o74</div>
+      <div class="card">
+        <div class="face front">o74</div>
+        <div class="face back">874</div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+  </div>
+
+
+
+  Days
+  Hours
+  Minutes
+  Seconds
+
+  </div>
+  <div class="social">
+    erfteter
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script>
+const numberSecs=document.querySelector(".number.secs")
+const numberMins=document.querySelector(".number.mins")
+const numberHours=document.querySelector(".number.hours")
+const numberDays=document.querySelector(".number.days")
+
+function setdigits(){
+
+  numberSecs.querySelector(".front").innerHTML=secs;
+  numberSecs.querySelector(".backbot").innerHTML=secs;
+  numberMins.querySelector(".front").innerHTML=mins;
+  numberMins.querySelector(".backbot").innerHTML=mins;
+  numberHours.querySelector(".front").innerHTML=hours;
+  numberHours.querySelector(".backbot").innerHTML=hours;
+  numberDays.querySelector(".front").innerHTML=days;
+  numberDays.querySelector(".backbot").innerHTML=days;
+
+  numberSecs.querySelector(".back").innerHTML=nextsecs;
+  numberSecs.querySelector(".backtop").innerHTML=nextsecs;
+  numberMins.querySelector(".back").innerHTML=nextmins;
+  numberMins.querySelector(".backtop").innerHTML=nextmins;
+  numberHours.querySelector(".back").innerHTML=nexthours;
+  numberHours.querySelector(".backtop").innerHTML=nexthours;
+  numberDays.querySelector(".back").innerHTML=nextdays;
+  numberDays.querySelector(".backtop").innerHTML=nextdays;
+
+
+
+}
+
+
+    let secs = 6;
+    let mins = 1;
+    let hours = 1;
+    let days = 5;
+
+    let nextsecs = secs-1;
+    let nextmins = mins;
+    let nexthours = hours;
+    let nextdays = days;
+if (nextsecs<0){nextsecs=59; nextmins-=1;}
+if (nextmins<0){nextmins=59; nexthours-=1;}
+if (nexthours<0){nexthours=23; nextdays-=1;}
+
+
+    
+setdigits();
+
+  </script>
+
+
+
+
+
+
+</body>
+
+</html>

@@ -15,10 +15,12 @@
   <style>
     .attribution {
       position: absolute;
+      width: 100%;
       bottom: 4px;
       margin: auto;
       font-size: 11px;
       text-align: center;
+      background-color: var(--blue);
     }
 
     .attribution a {
@@ -31,67 +33,87 @@
 
 
 
+  <div class="content">
 
 
-  <div class="heading">We're launching soon</div>
+    <div class="heading">
+      We're launching soon
 
-  <div class="timer">
+    </div>
 
-    <div class="number days">
-      <div class="backtop">874</div>
-      <div class="backbot">o74</div>
-      <div class="card">
-        <div class="face front">o74</div>
-        <div class="face back">874</div>
+    <div class="timer">
+
+      <div class="number days">
+        <div class="backtop"></div>
+        <div class="backbot"></div>
+        <div class="card">
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+
       </div>
+
+
+      <div class="number hours">
+        <div class="backtop"></div>
+        <div class="backbot"></div>
+        <div class="card">
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+      </div>
+
+      <div class="number mins">
+        <div class="backtop"></div>
+        <div class="backbot"></div>
+        <div class="card">
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+      </div>
+
+      <div class="number secs">
+        <div class="backtop"></div>
+        <div class="backbot"></div>
+        <div class="card">
+          <div class="face front"></div>
+          <div class="face back"></div>
+        </div>
+
+        <div class="ball1"></div>
+        <div class="ball2"></div>
+
+      </div>
+
+
     </div>
 
 
-    <div class="number hours">
-      <div class="backtop">874</div>
-      <div class="backbot">o74</div>
-      <div class="card">
-        <div class="face front">o74</div>
-        <div class="face back">874</div>
-      </div>
-    </div>
 
-    <div class="number mins">
-      <div class="backtop">874</div>
-      <div class="backbot">o74</div>
-      <div class="card">
-        <div class="face front">o74</div>
-        <div class="face back">874</div>
-      </div>
-    </div>
 
-    <div class="number secs">
-      <div class="backtop">874</div>
-      <div class="backbot">o74</div>
-      <div class="card">
-        <div class="face front">o74</div>
-        <div class="face back">874</div>
+
+
+
+
+    <div class="social">
+
+
+
+      <div class="soc">
+        <a href="https://www.facebook.com"><img src="./images/icon-facebook.svg" alt="facebook"></a>
+      </div>
+
+      <div class="soc">
+        <a href="https://www.instagram.com"><img src="./images/icon-instagram.svg" alt="instagram"></a>
+      </div>
+      <div class="soc">
+        <a href="https://www.pinterest.com"><img src="./images/icon-pinterest.svg" alt="pinterest"></a>
       </div>
     </div>
 
 
   </div>
 
-
-
-  </div>
-
-
-
-  Days
-  Hours
-  Minutes
-  Seconds
-
-  </div>
-  <div class="social">
-    erfteter
-  </div>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
@@ -99,60 +121,81 @@
   </div>
 
   <script>
-const numberSecs=document.querySelector(".number.secs")
-const numberMins=document.querySelector(".number.mins")
-const numberHours=document.querySelector(".number.hours")
-const numberDays=document.querySelector(".number.days")
+    //TODO put this in separate JS file
+    const numberSecs = document.querySelector(".number.secs")
+    const numberMins = document.querySelector(".number.mins")
+    const numberHours = document.querySelector(".number.hours")
+    const numberDays = document.querySelector(".number.days")
 
-function setdigits(){
+    function setdigits(currentOnly) {
 
-  numberSecs.querySelector(".front").innerHTML=secs;
-  numberSecs.querySelector(".backbot").innerHTML=secs;
-  numberMins.querySelector(".front").innerHTML=mins;
-  numberMins.querySelector(".backbot").innerHTML=mins;
-  numberHours.querySelector(".front").innerHTML=hours;
-  numberHours.querySelector(".backbot").innerHTML=hours;
-  numberDays.querySelector(".front").innerHTML=days;
-  numberDays.querySelector(".backbot").innerHTML=days;
-
-  numberSecs.querySelector(".back").innerHTML=nextsecs;
-  numberSecs.querySelector(".backtop").innerHTML=nextsecs;
-  numberMins.querySelector(".back").innerHTML=nextmins;
-  numberMins.querySelector(".backtop").innerHTML=nextmins;
-  numberHours.querySelector(".back").innerHTML=nexthours;
-  numberHours.querySelector(".backtop").innerHTML=nexthours;
-  numberDays.querySelector(".back").innerHTML=nextdays;
-  numberDays.querySelector(".backtop").innerHTML=nextdays;
-
-
-
-}
+      numberSecs.querySelector(".front").innerHTML = secs;
+      numberSecs.querySelector(".backbot").innerHTML = secs;
+      numberMins.querySelector(".front").innerHTML = mins;
+      numberMins.querySelector(".backbot").innerHTML = mins;
+      numberHours.querySelector(".front").innerHTML = hours;
+      numberHours.querySelector(".backbot").innerHTML = hours;
+      numberDays.querySelector(".front").innerHTML = days;
+      numberDays.querySelector(".backbot").innerHTML = days;
+      if (currentOnly) return;
+      numberSecs.querySelector(".back").innerHTML = nextsecs;
+      numberSecs.querySelector(".backtop").innerHTML = nextsecs;
+      numberMins.querySelector(".back").innerHTML = nextmins;
+      numberMins.querySelector(".backtop").innerHTML = nextmins;
+      numberHours.querySelector(".back").innerHTML = nexthours;
+      numberHours.querySelector(".backtop").innerHTML = nexthours;
+      numberDays.querySelector(".back").innerHTML = nextdays;
+      numberDays.querySelector(".backtop").innerHTML = nextdays;
+    }
 
 
-    let secs = 6;
+    let secs = 3;
     let mins = 1;
     let hours = 1;
     let days = 5;
+    let nextsecs;
+    let nextmins;
+    let nexthours;
+    let nextdays;
 
-    let nextsecs = secs-1;
-    let nextmins = mins;
-    let nexthours = hours;
-    let nextdays = days;
-if (nextsecs<0){nextsecs=59; nextmins-=1;}
-if (nextmins<0){nextmins=59; nexthours-=1;}
-if (nexthours<0){nexthours=23; nextdays-=1;}
+    numberSecs.querySelector(".card").addEventListener("animationend", () => {
+      secs = nextsecs;
+      mins = nextmins;
+      hours = nexthours;
+      days = nextdays;
+      setdigits(true);
+      [...document.querySelectorAll(".card")].forEach(x => x.classList.remove("cardflip"));
+    })
+    const myTimer = setInterval(() => {
+      nextsecs = secs - 1;
+      nextmins = mins;
+      nexthours = hours;
+      nextdays = days;
+      if (nextsecs < 0) {
+        nextsecs = 59;
+        nextmins -= 1;
+      }
+      if (nextmins < 0) {
+        nextmins = 59;
+        nexthours -= 1;
+      }
+      if (nexthours < 0) {
+        nexthours = 23;
+        nextdays -= 1;
+      }
 
 
-    
-setdigits();
+      setdigits(false);
+      if (days !== nextdays) numberDays.querySelector(".card").classList.add("cardflip");
+      if (hours !== nexthours) numberHours.querySelector(".card").classList.add("cardflip");
+      if (mins !== nextmins) numberMins.querySelector(".card").classList.add("cardflip");
+      numberSecs.querySelector(".card").classList.add("cardflip");
 
+    }, 1000);
+    if (!secs && !mins && !hours && !days) {
+      clearInterval(myTimer);
+    }
   </script>
-
-
-
-
-
-
 </body>
 
 </html>
